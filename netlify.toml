@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # NEXT_PUBLIC_* values are embedded in the browser bundle by design.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_MAPS_KEY,NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"
+
+# Required for Next.js SSR on Netlify (middleware, API routes, server actions,
+# dynamic pages). Without this plugin only static output is served.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
