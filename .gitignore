@@ -12,3 +12,5 @@ npm-debug.log*
 next-env.d.ts
 .netlify
 .bridge
+
+.vercel
